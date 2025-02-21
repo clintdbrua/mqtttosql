@@ -27,8 +27,8 @@ client.on('connect', () => {
 // Database configuration
 const dbConfig = {
     user: 'clintb',
-    password: 'F@ll1Shere!',
-    server: 'appserver', // Change this
+    password: 'F@ll1shere!',
+    server: '192.168.2.11', // Change this
     database: 'MfgProduction',
     options: {
         encrypt: false, // Set to true if using Azure SQL
