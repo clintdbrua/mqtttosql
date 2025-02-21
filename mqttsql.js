@@ -15,11 +15,11 @@ const client = mqtt.connect('mqtt://localhost', { // Replace with your actual br
 
 client.on('connect', () => {
     console.log("Connected to MQTT broker.");
-    client.subscribe('lincoln_electric/welding/100002021218015/summary', (err) => {
+    client.subscribe('lincoln_electric/welding/Lincoln-130/summary', (err) => {
         if (err) {
             console.error("Subscription error:", err);
         } else {
-            console.log("Subscribed to topic: lincoln_electric/welding/100002021218015/summary");
+            console.log("Subscribed to topic: lincoln_electric/welding/Lincoln-130/summary");
         }
     });
 });
