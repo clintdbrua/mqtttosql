@@ -160,6 +160,9 @@ client.on('message', async (topic, message) => {
             .input('using_weld_score', sql.Bit, data.using_weld_score)
             .input('weld_type', sql.NVarChar, data.weld_type)
             .input('wire_drive_sn', sql.NVarChar, data.wire_drive_sn)
+            .input('start_delay', sql.Float, data.start_delay) 
+            .input('end_delay', sql.Float, data.end_delay)  
+            .input('duration_value', sql.Float, data.duration_value)
             .query(query);
 
         console.log("Data successfully inserted into database.");
