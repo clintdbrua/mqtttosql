@@ -132,7 +132,7 @@ client.on('message', async (topic, message) => {
             )
         `;
 
-        // Execute the query
+            // Execute the query
         await pool.request()
             .input('timestamp', sql.BigInt, data.timestamp)
             .input('weld_record_index', sql.Int, data.weld_record_index)
@@ -160,10 +160,55 @@ client.on('message', async (topic, message) => {
             .input('using_weld_score', sql.Bit, data.using_weld_score)
             .input('weld_type', sql.NVarChar, data.weld_type)
             .input('wire_drive_sn', sql.NVarChar, data.wire_drive_sn)
-            .input('start_delay', sql.Float, data.start_delay) 
-            .input('end_delay', sql.Float, data.end_delay)  
+            .input('start_delay', sql.Float, data.start_delay)
+            .input('end_delay', sql.Float, data.end_delay)
             .input('duration_value', sql.Float, data.duration_value)
+            .input('duration_limit_high', sql.Float, data.duration_limit_high)  // Added this
+            .input('duration_limit_low', sql.Float, data.duration_limit_low)    // Added this
+            .input('consumable_density', sql.Float, data.consumable_density)
+            .input('consumable_diameter', sql.Float, data.consumable_diameter)
+            .input('true_energy', sql.Float, data.true_energy)
+            .input('weld_profile', sql.NVarChar, data.weld_profile)
+            .input('weld_start_time', sql.NVarChar, data.weld_start_time)
+            .input('status_current_low', sql.Bit, data.status_current_low)
+            .input('status_current_high', sql.Bit, data.status_current_high)
+            .input('status_voltage_low', sql.Bit, data.status_voltage_low)
+            .input('status_voltage_high', sql.Bit, data.status_voltage_high)
+            .input('status_wire_feed_speed_low', sql.Bit, data.status_wire_feed_speed_low)
+            .input('status_wire_feed_speed_high', sql.Bit, data.status_wire_feed_speed_high)
+            .input('status_weld_score_low', sql.Bit, data.status_weld_score_low)
+            .input('status_arc_time_out_of_limits', sql.Bit, data.status_arc_time_out_of_limits)
+            .input('status_short_weld', sql.Bit, data.status_short_weld)
+            .input('status_arc_time_low', sql.Bit, data.status_arc_time_low)
+            .input('status_arc_time_high', sql.Bit, data.status_arc_time_high)
+            .input('status_alarm', sql.Bit, data.status_alarm)
+            .input('status_latch_alarm', sql.Bit, data.status_latch_alarm)
+            .input('status_fault', sql.Bit, data.status_fault)
+            .input('status_latch_fault', sql.Bit, data.status_latch_fault)
+            .input('limits_enabled_arc_time', sql.Bit, data.limits_enabled_arc_time)
+            .input('limits_enabled_weld_score', sql.Bit, data.limits_enabled_weld_score)
+            .input('limits_enabled_wire_feed_speed', sql.Bit, data.limits_enabled_wire_feed_speed)
+            .input('limits_enabled_current', sql.Bit, data.limits_enabled_current)
+            .input('limits_enabled_voltage', sql.Bit, data.limits_enabled_voltage)
+            .input('part_serial', sql.NVarChar, data.part_serial)
+            .input('operator_id', sql.Int, data.operator_id)
+            .input('consumable_lot', sql.NVarChar, data.consumable_lot)
+            .input('weld_mode', sql.NVarChar, data.weld_mode)
+            .input('assembly_id', sql.Int, data.assembly_id)
+            .input('seam_id', sql.Int, data.seam_id)
+            .input('average_motor_current', sql.Float, data.average_motor_current)
+            .input('average_gas_flow', sql.Float, data.average_gas_flow)
+            .input('warnings_wire_feed_speed_high', sql.Bit, data.warnings_wire_feed_speed_high)
+            .input('warnings_wire_feed_speed_low', sql.Bit, data.warnings_wire_feed_speed_low)
+            .input('warnings_voltage_high', sql.Bit, data.warnings_voltage_high)
+            .input('warnings_voltage_low', sql.Bit, data.warnings_voltage_low)
+            .input('warnings_current_high', sql.Bit, data.warnings_current_high)
+            .input('warnings_current_low', sql.Bit, data.warnings_current_low)
+            .input('warnings_weld_score', sql.Bit, data.warnings_weld_score)
+            .input('warnings_time', sql.Bit, data.warnings_time)
             .query(query);
+
+
 
         console.log("Data successfully inserted into database.");
 
