@@ -169,7 +169,7 @@ client.on('message', async (topic, message) => {
             .input('consumable_diameter', sql.Float, data.consumable_diameter)
             .input('true_energy', sql.Float, data.true_energy)
             .input('weld_profile', sql.Int, data.weld_profile)
-            .input('weld_start_time', sql.NVarChar, data.weld_start_time)
+            .input('weld_start_time', sql.DateTime, new Date(data.weld_start_time * 1000))
             .input('status_current_low', sql.Bit, data.status_current_low)
             .input('status_current_high', sql.Bit, data.status_current_high)
             .input('status_voltage_low', sql.Bit, data.status_voltage_low)
