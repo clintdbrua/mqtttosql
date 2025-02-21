@@ -193,7 +193,7 @@ client.on('message', async (topic, message) => {
             .input('part_serial', sql.NVarChar, data.part_serial)
             .input('operator_id', sql.Int, data.operator_id)
             .input('consumable_lot', sql.NVarChar, data.consumable_lot)
-            .input('weld_mode', sql.NVarChar, data.weld_mode)
+            .input('weld_mode', sql.Int, data.weld_mode)
             .input('assembly_id', sql.Int, data.assembly_id)
             .input('seam_id', sql.Int, data.seam_id)
             .input('average_motor_current', sql.Float, data.average_motor_current)
