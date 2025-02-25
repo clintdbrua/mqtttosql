@@ -162,7 +162,8 @@ client.on('message', async (topic, message) => {
             .input('wire_drive_sn', sql.NVarChar, data.wire_drive_sn)
             .input('start_delay', sql.Float, data.start_delay)
             .input('end_delay', sql.Float, data.end_delay)
-            .input('duration_value', sql.Float, data.duration_value)
+           // .input('duration_value', sql.Float, data.duration_value)  // Old Input Value
+            .input('duration_value', sql.Float, data.duration.value)
             .input('duration_limit_high', sql.Float, data.duration_limit_high)  // Added this
             .input('duration_limit_low', sql.Float, data.duration_limit_low)    // Added this
             .input('consumable_density', sql.Float, data.consumable_density)
