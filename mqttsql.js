@@ -166,8 +166,8 @@ client.on('message', async (topic, message) => {
             .input('duration_value', sql.Float, data.duration.value)
             .input('duration_limit_high', sql.Float, data.duration.limit.high)  // Changed this to data.duration.limit_high from data.duration_limit.high
             .input('duration_limit_low', sql.Float, data.duration.limit.low)    // Changed this to data.duration.limit_low from data.duration_limit.low
-            .input('consumable_density', sql.Float, data.consumable_density)
-            .input('consumable_diameter', sql.Float, data.consumable_diameter)
+            .input('consumable_density', sql.Float, data.consumable.density)
+            .input('consumable_diameter', sql.Float, data.consumable.diameter)
             .input('true_energy', sql.Float, data.true_energy)
             .input('weld_profile', sql.Int, data.weld_profile)
             .input('weld_start_time', sql.DateTime, new Date(data.weld_start_time * 1000))
