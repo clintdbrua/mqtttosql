@@ -164,8 +164,8 @@ client.on('message', async (topic, message) => {
             .input('end_delay', sql.Float, data.end_delay)
            // .input('duration_value', sql.Float, data.duration_value)  // Old Input Value
             .input('duration_value', sql.Float, data.duration.value)
-            .input('duration_limit_high', sql.Float, data.duration_limit_high)  // Added this
-            .input('duration_limit_low', sql.Float, data.duration_limit_low)    // Added this
+            .input('duration_limit_high', sql.Float, data.duration.limit_high)  // Changed this to data.duration.limit_high from data.duration_limit_high
+            .input('duration_limit_low', sql.Float, data.duration.limit_low)    // Changed this to data.duration.limit_low from data.duration_limit_low
             .input('consumable_density', sql.Float, data.consumable_density)
             .input('consumable_diameter', sql.Float, data.consumable_diameter)
             .input('true_energy', sql.Float, data.true_energy)
