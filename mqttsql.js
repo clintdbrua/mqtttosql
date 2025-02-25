@@ -199,14 +199,14 @@ client.on('message', async (topic, message) => {
             .input('seam_id', sql.Int, data.seam_id)
             .input('average_motor_current', sql.Float, data.average_motor_current)
             .input('average_gas_flow', sql.Float, data.average_gas_flow)
-            .input('warnings_wire_feed_speed_high', sql.Bit, data.warnings_wire_feed_speed_high)
-            .input('warnings_wire_feed_speed_low', sql.Bit, data.warnings_wire_feed_speed_low)
-            .input('warnings_voltage_high', sql.Bit, data.warnings_voltage_high)
-            .input('warnings_voltage_low', sql.Bit, data.warnings_voltage_low)
-            .input('warnings_current_high', sql.Bit, data.warnings_current_high)
-            .input('warnings_current_low', sql.Bit, data.warnings_current_low)
-            .input('warnings_weld_score', sql.Bit, data.warnings_weld_score)
-            .input('warnings_time', sql.Bit, data.warnings_time)
+            .input('warnings_wire_feed_speed_high', sql.Bit, data.warnings.wire_feed_speed_high)
+            .input('warnings_wire_feed_speed_low', sql.Bit, data.warnings.wire_feed_speed_low)
+            .input('warnings_voltage_high', sql.Bit, data.warnings.voltage_high)
+            .input('warnings_voltage_low', sql.Bit, data.warnings.voltage_low)
+            .input('warnings_current_high', sql.Bit, data.warnings.current_high)
+            .input('warnings_current_low', sql.Bit, data.warnings.current_low)
+            .input('warnings_weld_score', sql.Bit, data.warnings.weld_score)
+            .input('warnings_time', sql.Bit, data.warnings.time)
             .query(query);
 
 
